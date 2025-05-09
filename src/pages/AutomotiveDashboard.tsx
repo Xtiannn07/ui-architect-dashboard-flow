@@ -228,42 +228,44 @@ const AutomotiveDashboard = () => {
             <CardHeader>
               <CardTitle>Performance Analysis</CardTitle>
               <CardDescription>Speed and driving patterns</CardDescription>
+            </CardHeader>
+            <CardContent>
               <Tabs defaultValue="weekly">
-                <TabsList className="grid grid-cols-2 w-[200px]">
+                <TabsList className="grid grid-cols-2 w-[200px] mb-4">
                   <TabsTrigger value="weekly">Weekly</TabsTrigger>
                   <TabsTrigger value="monthly">Monthly</TabsTrigger>
                 </TabsList>
+                
+                <TabsContent value="weekly" className="h-80">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={performanceData.weekly}>
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="day" />
+                      <YAxis />
+                      <Tooltip content={<CustomTooltip />} />
+                      <Legend />
+                      <Line type="monotone" dataKey="speed" stroke="#0f6fde" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                      <Line type="monotone" dataKey="braking" stroke="#f97316" strokeWidth={2} dot={{ r: 4 }} />
+                      <Line type="monotone" dataKey="acceleration" stroke="#22c55e" strokeWidth={2} dot={{ r: 4 }} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </TabsContent>
+                
+                <TabsContent value="monthly" className="h-80">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={performanceData.monthly}>
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="week" />
+                      <YAxis />
+                      <Tooltip content={<CustomTooltip />} />
+                      <Legend />
+                      <Line type="monotone" dataKey="speed" stroke="#0f6fde" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
+                      <Line type="monotone" dataKey="braking" stroke="#f97316" strokeWidth={2} dot={{ r: 4 }} />
+                      <Line type="monotone" dataKey="acceleration" stroke="#22c55e" strokeWidth={2} dot={{ r: 4 }} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </TabsContent>
               </Tabs>
-            </CardHeader>
-            <CardContent>
-              <TabsContent value="weekly" className="h-80">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={performanceData.weekly}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="day" />
-                    <YAxis />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Legend />
-                    <Line type="monotone" dataKey="speed" stroke="#0f6fde" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
-                    <Line type="monotone" dataKey="braking" stroke="#f97316" strokeWidth={2} dot={{ r: 4 }} />
-                    <Line type="monotone" dataKey="acceleration" stroke="#22c55e" strokeWidth={2} dot={{ r: 4 }} />
-                  </LineChart>
-                </ResponsiveContainer>
-              </TabsContent>
-              <TabsContent value="monthly" className="h-80">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={performanceData.monthly}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="week" />
-                    <YAxis />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Legend />
-                    <Line type="monotone" dataKey="speed" stroke="#0f6fde" strokeWidth={2} dot={{ r: 4 }} activeDot={{ r: 6 }} />
-                    <Line type="monotone" dataKey="braking" stroke="#f97316" strokeWidth={2} dot={{ r: 4 }} />
-                    <Line type="monotone" dataKey="acceleration" stroke="#22c55e" strokeWidth={2} dot={{ r: 4 }} />
-                  </LineChart>
-                </ResponsiveContainer>
-              </TabsContent>
             </CardContent>
           </Card>
 
