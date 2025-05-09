@@ -1,27 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSidebar } from "./SidebarContext";
-import { 
-  Home, 
-  LayoutDashboard, 
-  User, 
-  Settings, 
-  ShoppingCart, 
-  ChevronDown, 
-  ChevronRight,
-  Car,
-  Users,
-  Book,
-  Star,
-  FileText,
-  UserPlus,
-  CreditCard,
-  FileInvoice,
-  Shield,
-  FolderKanban,
-  Clock,
-  PlusCircle
-} from "lucide-react";
+import { Home, LayoutDashboard, User, Settings, ShoppingCart, ChevronDown, ChevronRight, Car, Users, Book, Star, FileText, UserPlus, CreditCard, FileInput as FileInvoice, Shield, FolderKanban, Clock, PlusCircle } from "lucide-react";
 
 interface NavItemProps {
   icon: React.ReactNode;
