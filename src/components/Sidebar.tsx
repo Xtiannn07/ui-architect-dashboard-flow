@@ -11,6 +11,7 @@ import {
   ChevronDown, 
   ChevronRight,
   Car,
+  Users
 } from "lucide-react";
 
 interface NavItemProps {
@@ -132,7 +133,7 @@ export function Sidebar() {
               isMini={isMini}
             />
             <NavItem 
-              icon={<User size={18} />} 
+              icon={<Users size={18} />} 
               label="CRM" 
               href="/crm" 
               active={isActiveRoute("/crm")}

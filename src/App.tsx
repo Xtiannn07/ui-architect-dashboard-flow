@@ -13,6 +13,7 @@ import { Layout } from "./components/Layout";
 import DefaultDashboard from "./pages/DefaultDashboard";
 import AutomotiveDashboard from "./pages/AutomotiveDashboard";
 import SmartHomeDashboard from "./pages/SmartHomeDashboard";
+import CrmDashboard from "./pages/CrmDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
                   <Route path="/" element={<DefaultDashboard />} />
                   <Route path="/automotive" element={<AutomotiveDashboard />} />
                   <Route path="/smart-home" element={<SmartHomeDashboard />} />
+                  <Route path="/crm" element={<CrmDashboard />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
