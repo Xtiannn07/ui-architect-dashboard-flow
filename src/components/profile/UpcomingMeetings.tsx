@@ -50,7 +50,7 @@ export const UpcomingMeetings = ({ meetings }: UpcomingMeetingsProps) => {
                   </Avatar>
                 ))}
               </AvatarGroup>
-              <Button size="sm" variant="primary" className="bg-green-500 hover:bg-green-600 text-white">{meeting.action}</Button>
+              <Button size="sm" variant="default" className="bg-green-500 hover:bg-green-600 text-white">{meeting.action}</Button>
             </div>
           </div>
         ))}
