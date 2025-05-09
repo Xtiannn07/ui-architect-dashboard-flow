@@ -11,7 +11,9 @@ import {
   ChevronDown, 
   ChevronRight,
   Car,
-  Users
+  Users,
+  Book,
+  Star
 } from "lucide-react";
 
 interface NavItemProps {
@@ -142,17 +144,39 @@ export function Sidebar() {
           </NavCategory>
 
           <NavCategory 
-            label="Pages" 
+            label="Profile" 
             icon={<User size={20} />} 
             isMini={isMini}
+            defaultOpen={location.pathname.includes("/profile")}
           >
             <NavItem 
               icon={<User size={18} />} 
-              label="Profile" 
+              label="Profile Overview" 
               href="/profile" 
               active={isActiveRoute("/profile")}
               isMini={isMini}
             />
+            <NavItem 
+              icon={<Users size={18} />} 
+              label="Teams" 
+              href="/profile/teams" 
+              active={isActiveRoute("/profile/teams")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<Star size={18} />} 
+              label="Projects" 
+              href="/profile/projects" 
+              active={isActiveRoute("/profile/projects")}
+              isMini={isMini}
+            />
+          </NavCategory>
+
+          <NavCategory 
+            label="Pages" 
+            icon={<Book size={20} />} 
+            isMini={isMini}
+          >
             <NavItem 
               icon={<Settings size={18} />} 
               label="Settings" 

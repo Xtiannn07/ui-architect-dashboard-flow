@@ -14,6 +14,9 @@ import DefaultDashboard from "./pages/DefaultDashboard";
 import AutomotiveDashboard from "./pages/AutomotiveDashboard";
 import SmartHomeDashboard from "./pages/SmartHomeDashboard";
 import CrmDashboard from "./pages/CrmDashboard";
+import ProfileOverview from "./pages/ProfileOverview";
+import Teams from "./pages/Teams";
+import AllProjects from "./pages/AllProjects";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +36,12 @@ const App = () => (
                   <Route path="/automotive" element={<AutomotiveDashboard />} />
                   <Route path="/smart-home" element={<SmartHomeDashboard />} />
                   <Route path="/crm" element={<CrmDashboard />} />
+                  
+                  {/* Profile Routes */}
+                  <Route path="/profile" element={<ProfileOverview />} />
+                  <Route path="/profile/teams" element={<Teams />} />
+                  <Route path="/profile/projects" element={<AllProjects />} />
+                  
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
