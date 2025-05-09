@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSidebar } from "./SidebarContext";
@@ -13,7 +12,15 @@ import {
   Car,
   Users,
   Book,
-  Star
+  Star,
+  FileText,
+  UserPlus,
+  CreditCard,
+  FileInvoice,
+  Shield,
+  FolderKanban,
+  Clock,
+  PlusCircle
 } from "lucide-react";
 
 interface NavItemProps {
@@ -86,7 +93,6 @@ export function Sidebar() {
     ? "bg-transparent backdrop-blur-xl bg-white/50 dark:bg-black/50" 
     : "bg-white dark:bg-slate-800";
 
-  // Check current route for active state
   const isActiveRoute = (route: string) => {
     return location.pathname === route;
   };
@@ -144,6 +150,93 @@ export function Sidebar() {
           </NavCategory>
 
           <NavCategory 
+            label="Users" 
+            icon={<User size={20} />} 
+            isMini={isMini}
+            defaultOpen={location.pathname.includes("/users")}
+          >
+            <NavItem 
+              icon={<FileText size={18} />} 
+              label="Reports" 
+              href="/users/reports" 
+              active={isActiveRoute("/users/reports")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<UserPlus size={18} />} 
+              label="New User" 
+              href="/users/new" 
+              active={isActiveRoute("/users/new")}
+              isMini={isMini}
+            />
+          </NavCategory>
+
+          <NavCategory 
+            label="Account" 
+            icon={<Settings size={20} />} 
+            isMini={isMini}
+            defaultOpen={location.pathname.includes("/account")}
+          >
+            <NavItem 
+              icon={<Settings size={18} />} 
+              label="Settings" 
+              href="/account/settings" 
+              active={isActiveRoute("/account/settings")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<CreditCard size={18} />} 
+              label="Billing" 
+              href="/account/billing" 
+              active={isActiveRoute("/account/billing")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<FileInvoice size={18} />} 
+              label="Invoice" 
+              href="/account/invoice" 
+              active={isActiveRoute("/account/invoice")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<Shield size={18} />} 
+              label="Security" 
+              href="/account/security" 
+              active={isActiveRoute("/account/security")}
+              isMini={isMini}
+            />
+          </NavCategory>
+
+          <NavCategory 
+            label="Projects" 
+            icon={<FolderKanban size={20} />} 
+            isMini={isMini}
+            defaultOpen={location.pathname.includes("/projects")}
+          >
+            <NavItem 
+              icon={<Book size={18} />} 
+              label="General" 
+              href="/projects/general" 
+              active={isActiveRoute("/projects/general")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<Clock size={18} />} 
+              label="Timeline" 
+              href="/projects/timeline" 
+              active={isActiveRoute("/projects/timeline")}
+              isMini={isMini}
+            />
+            <NavItem 
+              icon={<PlusCircle size={18} />} 
+              label="New Project" 
+              href="/projects/new" 
+              active={isActiveRoute("/projects/new")}
+              isMini={isMini}
+            />
+          </NavCategory>
+
+          <NavCategory 
             label="Profile" 
             icon={<User size={20} />} 
             isMini={isMini}
@@ -168,20 +261,6 @@ export function Sidebar() {
               label="Projects" 
               href="/profile/projects" 
               active={isActiveRoute("/profile/projects")}
-              isMini={isMini}
-            />
-          </NavCategory>
-
-          <NavCategory 
-            label="Pages" 
-            icon={<Book size={20} />} 
-            isMini={isMini}
-          >
-            <NavItem 
-              icon={<Settings size={18} />} 
-              label="Settings" 
-              href="/settings" 
-              active={isActiveRoute("/settings")}
               isMini={isMini}
             />
           </NavCategory>

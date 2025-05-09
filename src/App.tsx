@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,21 @@ import ProfileOverview from "./pages/ProfileOverview";
 import Teams from "./pages/Teams";
 import AllProjects from "./pages/AllProjects";
 import NotFound from "./pages/NotFound";
+
+// User Pages
+import UserReports from "./pages/users/Reports";
+import NewUser from "./pages/users/NewUser";
+
+// Account Pages
+import AccountSettings from "./pages/account/Settings";
+import AccountBilling from "./pages/account/Billing";
+import AccountInvoice from "./pages/account/Invoice";
+import AccountSecurity from "./pages/account/Security";
+
+// Project Pages
+import ProjectsGeneral from "./pages/projects/General";
+import ProjectsTimeline from "./pages/projects/Timeline";
+import NewProject from "./pages/projects/NewProject";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +55,21 @@ const App = () => (
                   <Route path="/profile" element={<ProfileOverview />} />
                   <Route path="/profile/teams" element={<Teams />} />
                   <Route path="/profile/projects" element={<AllProjects />} />
+                  
+                  {/* User Routes */}
+                  <Route path="/users/reports" element={<UserReports />} />
+                  <Route path="/users/new" element={<NewUser />} />
+                  
+                  {/* Account Routes */}
+                  <Route path="/account/settings" element={<AccountSettings />} />
+                  <Route path="/account/billing" element={<AccountBilling />} />
+                  <Route path="/account/invoice" element={<AccountInvoice />} />
+                  <Route path="/account/security" element={<AccountSecurity />} />
+                  
+                  {/* Project Routes */}
+                  <Route path="/projects/general" element={<ProjectsGeneral />} />
+                  <Route path="/projects/timeline" element={<ProjectsTimeline />} />
+                  <Route path="/projects/new" element={<NewProject />} />
                   
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
