@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Battery, Engine, Car, CircleDot, Calendar, MapPin } from "lucide-react";
+import { Battery, Car, Calendar, MapPin, CircleDot } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
@@ -22,13 +21,13 @@ import {
 // Mock Data
 const vehicleStatusData = [
   { name: "Battery Health", value: "99%", icon: <Battery className="h-5 w-5" />, trend: "up", color: "green", detail: "Excellent condition" },
-  { name: "Engine Health", value: "92%", icon: <Engine className="h-5 w-5" />, trend: "up", color: "green", detail: "Good performance" },
+  { name: "Engine Health", value: "92%", icon: <Car className="h-5 w-5" />, trend: "up", color: "green", detail: "Good performance" },
   { name: "Tire Pressure", value: "34 PSI", icon: <CircleDot className="h-5 w-5" />, trend: "stable", color: "blue", detail: "All tires normal" },
   { name: "Gas Level", value: "34%", icon: <Car className="h-5 w-5" />, trend: "down", color: "red", detail: "Fill up soon" },
 ];
 
 const maintenanceData = [
-  { id: 1, task: "Oil Change", date: "2025-02-15", status: "Completed", icon: <Engine className="h-4 w-4" />, color: "green", notes: "Used synthetic oil" },
+  { id: 1, task: "Oil Change", date: "2025-02-15", status: "Completed", icon: <Car className="h-4 w-4" />, color: "green", notes: "Used synthetic oil" },
   { id: 2, task: "Battery Check", date: "2025-03-20", status: "Upcoming", icon: <Battery className="h-4 w-4" />, color: "blue", notes: "Scheduled service" },
   { id: 3, task: "Brake Inspection", date: "2025-01-05", status: "Completed", icon: <CircleDot className="h-4 w-4" />, color: "green", notes: "Replaced brake pads" },
   { id: 4, task: "Tire Rotation", date: "2025-04-10", status: "Upcoming", icon: <CircleDot className="h-4 w-4" />, color: "blue", notes: "Due for rotation" },
