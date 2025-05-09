@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSidebar } from "./SidebarContext";
 import { 
   Home, 
@@ -9,7 +9,8 @@ import {
   Settings, 
   ShoppingCart, 
   ChevronDown, 
-  ChevronRight 
+  ChevronRight,
+  Car,
 } from "lucide-react";
 
 interface NavItemProps {
@@ -76,10 +77,16 @@ const NavCategory = ({ label, icon, children, isMini, defaultOpen = false }: Nav
 
 export function Sidebar() {
   const { isOpen, isMini, isTransparent } = useSidebar();
+  const location = useLocation();
   const sidebarWidth = isOpen ? (isMini ? "w-16" : "w-64") : "w-0";
   const sidebarClasses = isTransparent 
     ? "bg-transparent backdrop-blur-xl bg-white/50 dark:bg-black/50" 
     : "bg-white dark:bg-slate-800";
+
+  // Check current route for active state
+  const isActiveRoute = (route: string) => {
+    return location.pathname === route;
+  };
 
   return (
     <aside 
@@ -107,25 +114,28 @@ export function Sidebar() {
               icon={<Home size={18} />} 
               label="Default" 
               href="/" 
-              active={true}
+              active={isActiveRoute("/")}
               isMini={isMini}
             />
             <NavItem 
-              icon={<ShoppingCart size={18} />} 
+              icon={<Car size={18} />} 
               label="Automotive" 
               href="/automotive" 
+              active={isActiveRoute("/automotive")}
               isMini={isMini}
             />
             <NavItem 
               icon={<Home size={18} />} 
               label="Smart Home" 
               href="/smart-home" 
+              active={isActiveRoute("/smart-home")}
               isMini={isMini}
             />
             <NavItem 
               icon={<User size={18} />} 
               label="CRM" 
               href="/crm" 
+              active={isActiveRoute("/crm")}
               isMini={isMini}
             />
           </NavCategory>
@@ -139,12 +149,14 @@ export function Sidebar() {
               icon={<User size={18} />} 
               label="Profile" 
               href="/profile" 
+              active={isActiveRoute("/profile")}
               isMini={isMini}
             />
             <NavItem 
               icon={<Settings size={18} />} 
               label="Settings" 
               href="/settings" 
+              active={isActiveRoute("/settings")}
               isMini={isMini}
             />
           </NavCategory>
