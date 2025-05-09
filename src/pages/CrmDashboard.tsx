@@ -8,7 +8,7 @@ import {
   ArrowDown, 
   ArrowUp, 
   Calendar, 
-  ChartLineUp, 
+  ChartLine, 
   CircleDollarSign, 
   Smile, 
   Users,
@@ -46,7 +46,7 @@ const CrmDashboard = () => {
           value="$9,602"
           change="+3%"
           changeType="positive"
-          icon={<ChartLineUp className="h-5 w-5" />}
+          icon={<ChartLine className="h-5 w-5" />}
           description="Comparison with last period"
           accentColor="bg-blue-500"
         />
