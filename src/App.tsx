@@ -29,9 +29,9 @@ import AccountInvoice from "./pages/account/Invoice";
 import AccountSecurity from "./pages/account/Security";
 
 // Project Pages
-import ProjectsGeneral from "./pages/projects/General";
-import ProjectsTimeline from "./pages/projects/Timeline";
-import NewProject from "./pages/projects/NewProject";
+import ProjectsGeneral from "./pages/projects/general";
+import ProjectsTimeline from "./pages/projects/timeline";
+import NewProject from "./pages/projects/new-project";
 
 const queryClient = new QueryClient();
 
